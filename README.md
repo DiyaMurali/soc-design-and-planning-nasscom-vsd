@@ -1,7 +1,9 @@
 
 # VSD - Digital VLSI SoC Design and Planning
 
-2 Week digital VLSI SoC design and planning workshop with complete RTL2GDSII flow organised by VSD in collaboration with NASSCOM
+2 Week digital VLSI SoC design and planning workshop with complete RTL2GDSII flow organised by VSD in collaboration with NASSCOM (Advanced Physical Design using OpenLANE/Sky130)
+
+
 
 
 
@@ -490,11 +492,6 @@ gvim .magicrc
 magic -d XR &
 ```
 
-Screenshots of commands run
-
-![Screenshot from 2024-09-29 23-49-57](https://github.com/user-attachments/assets/7b13623f-a585-427e-bcad-d92e84921b8d)
-
-![Screenshot from 2024-09-29 23-50-06](https://github.com/user-attachments/assets/79e6698d-9edb-4d5b-9858-a65319d2f523)
 
 Screenshot of .magicrc file
 
@@ -871,7 +868,7 @@ Screenshots of command run
 
 ![Screenshot from 2024-10-01 18-28-23](https://github.com/user-attachments/assets/f6fabcd0-03dc-4dff-b24a-e86ca2ac7acc)
 
-![Screenshot from 2024-10-01 18-28-00](https://github.com/user-attachments/assets/62eb9b8c-7562-4889-88d1-0b43534f5bf4)
+
 
 Since we are facing unexpected un-explainable error while using `run_floorplan` command, we can instead use the following set of commands available based on information from `Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl` and also based on `Floorplan Commands` section in `Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md`
 
@@ -882,13 +879,6 @@ place_io
 tap_decap_or
 ```
 
-Screenshots of commands run
-
-![Screenshot from 2024-10-01 18-29-49](https://github.com/user-attachments/assets/fd0b7e65-4686-4191-9faf-4836d0fd06b6)
-
-![Screenshot from 2024-10-01 18-30-01](https://github.com/user-attachments/assets/3e5aba77-c592-4557-92dc-f0546bc33239)
-
-![Screenshot from 2024-10-01 18-30-04](https://github.com/user-attachments/assets/14836a58-715d-429b-ad26-17a6a77accb0)
 
 Now that floorplan is done we can do placement using following command
 
@@ -897,17 +887,13 @@ Now that floorplan is done we can do placement using following command
 run_placement
 ```
 
-Screenshots of command run
 
-![Screenshot from 2024-10-01 18-31-18](https://github.com/user-attachments/assets/e623be3d-2b3c-4f1f-8d1f-1e6b069f6b26)
-
-![Screenshot from 2024-10-01 18-31-27](https://github.com/user-attachments/assets/85d3b9a6-869c-47ac-a192-f2c75b3bcc51)
 
 Commands to load placement def in magic in another terminal
 
 ```bash
 # Change directory to path containing generated placement def
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/24-09_19-19/results/placement/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/05-01_18-52/results/placement/
 
 # Command to load the placement def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
@@ -971,9 +957,8 @@ Commands run final screenshot
 
 ![WhatsApp Image 2024-10-03 at 16 11 30_75e90ae0](https://github.com/user-attachments/assets/ee7a3b0c-776c-4b9e-a9f8-6512047873a1)
 
-Newly created `pre_sta.conf` for STA analysis in `openlane` directory
 
-![WhatsApp Image 2024-10-03 at 16 11 30_c34f9892](https://github.com/user-attachments/assets/81915ac9-a166-4af2-bfbc-53e746296f6a)
+
 
 Newly created `my_base.sdc` for STA analysis in `openlane/designs/picorv32a/src` directory based on the file `openlane/scripts/base.sdc`
 
@@ -1172,7 +1157,7 @@ Commands to make copy of netlist
 
 ```bash
 # Change from home directory to synthesis results directory
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/03-10_10-30/results/synthesis/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/05-01_18-52/results/synthesis/
 
 # List contents of the directory
 ls
@@ -1184,9 +1169,6 @@ cp picorv32a.synthesis.v picorv32a.synthesis_old.v
 ls
 ```
 
-Screenshot of commands run
-
-![WhatsApp Image 2024-10-03 at 16 26 59_9c9f0ebc](https://github.com/user-attachments/assets/da1e3ae9-c726-425a-8012-13c1a4370b5c)
 
 Commands to write verilog
 
@@ -1195,15 +1177,12 @@ Commands to write verilog
 help write_verilog
 
 # Overwriting current synthesis netlist
-write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/03-10_10-30/results/synthesis/picorv32a.synthesis.v
+write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/05-01_18-52/results/synthesis/picorv32a.synthesis.v
 
 # Exit from OpenSTA since timing analysis is done
 exit
 ```
 
-Screenshot of commands run
-
-![WhatsApp Image 2024-10-03 at 16 26 59_41155701](https://github.com/user-attachments/assets/8957a224-ae10-4e08-8c77-25ff0bab8373)
 
 Verified that the netlist is overwritten by checking that instance `_14506_`  is replaced with `sky130_fd_sc_hd__or4_4`
 
