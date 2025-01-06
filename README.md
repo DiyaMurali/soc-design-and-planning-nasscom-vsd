@@ -1194,7 +1194,7 @@ Commands load the design and run necessary stages
 
 ```tcl
 # Now once again we have to prep design so as to update variables
-prep -design picorv32a -tag 24-09_19-19 -overwrite
+prep -design picorv32a -tag 05-01_18-52 -overwrite
 
 # Addiitional commands to include newly added lef to openlane flow merged.lef
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
@@ -1224,21 +1224,7 @@ unset ::env(LIB_CTS)
 run_cts
 ```
 
-Screenshots of commands run
 
-![Screenshot from 2024-10-01 19-47-25](https://github.com/user-attachments/assets/77930291-f905-48f0-80fe-bec87c82a366)
-
-![Screenshot from 2024-10-01 19-48-24](https://github.com/user-attachments/assets/cc8d817d-1e43-482d-895f-8d6dcf2e2d9d)
-
-![Screenshot from 2024-10-01 19-49-22](https://github.com/user-attachments/assets/c6b56404-8b50-4235-887c-1020e8c72585)
-
-![Screenshot from 2024-10-01 19-49-58](https://github.com/user-attachments/assets/02a582c1-5467-454a-aaa0-f8d3cca13a40)
-
-![Screenshot from 2024-10-01 19-50-13](https://github.com/user-attachments/assets/9bc5b8b9-684e-4a3a-8294-089911e9a85e)
-
-![Screenshot from 2024-10-01 19-50-31](https://github.com/user-attachments/assets/40e98078-3e27-4db7-9d40-c63401bf3c73)
-
-![Screenshot from 2024-10-01 19-53-41 - 1](https://github.com/user-attachments/assets/4ae4ac9f-a66d-421e-95a6-57db49a919e4)
 
 #### 12. Post-CTS OpenROAD timing analysis.
 
@@ -1249,10 +1235,10 @@ Commands to be run in OpenLANE flow to do OpenROAD timing analysis with integrat
 openroad
 
 # Reading lef file
-read_lef /openLANE_flow/designs/picorv32a/runs/24-09_19-19/tmp/merged.lef
+read_lef /openLANE_flow/designs/picorv32a/runs/05-01_18-52/tmp/merged.lef
 
 # Reading def file
-read_def /openLANE_flow/designs/picorv32a/runs/24-09_19-19/results/cts/picorv32a.cts.def
+read_def /openLANE_flow/designs/picorv32a/runs/05-01_18-52/results/cts/picorv32a.cts.def
 
 # Creating an OpenROAD database to work with
 write_db pico_cts.db
@@ -1261,7 +1247,7 @@ write_db pico_cts.db
 read_db pico_cts.db
 
 # Read netlist post CTS
-read_verilog /openLANE_flow/designs/picorv32a/runs/24-09_19-19/results/synthesis/picorv32a.synthesis_cts.v
+read_verilog /openLANE_flow/designs/picorv32a/runs/05-01_18-52/results/synthesis/picorv32a.synthesis_cts.v
 
 # Read library for design
 read_liberty $::env(LIB_SYNTH_COMPLETE)
@@ -1285,9 +1271,8 @@ report_checks -path_delay min_max -fields {slew trans net cap input_pins} -forma
 exit
 ```
 
-Screenshots of commands run and timing report generated
+Screenshots of timing report generated
 
-![Screenshot from 2024-10-01 19-58-41](https://github.com/user-attachments/assets/5e130f2e-59a5-40ff-b51e-907819d9feff)
 
 ![Screenshot from 2024-10-01 19-58-48](https://github.com/user-attachments/assets/605939c4-8cdf-4d75-8cab-61f2c296e245)
 
@@ -1311,7 +1296,7 @@ echo $::env(CTS_CLK_BUFFER_LIST)
 echo $::env(CURRENT_DEF)
 
 # Setting def as placement def
-set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/24-09_19-19/results/placement/picorv32a.placement.def
+set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/05-01_18-52/results/placement/picorv32a.placement.def
 
 # Run CTS again
 run_cts
@@ -1323,10 +1308,10 @@ echo $::env(CTS_CLK_BUFFER_LIST)
 openroad
 
 # Reading lef file
-read_lef /openLANE_flow/designs/picorv32a/runs/24-09_19-19/tmp/merged.lef
+read_lef /openLANE_flow/designs/picorv32a/runs/05-01_18-52/tmp/merged.lef
 
 # Reading def file
-read_def /openLANE_flow/designs/picorv32a/runs/24-09_19-19/results/cts/picorv32a.cts.def
+read_def /openLANE_flow/designs/picorv32a/runs/05-01_18-52/results/cts/picorv32a.cts.def
 
 # Creating an OpenROAD database to work with
 write_db pico_cts1.db
@@ -1335,7 +1320,7 @@ write_db pico_cts1.db
 read_db pico_cts.db
 
 # Read netlist post CTS
-read_verilog /openLANE_flow/designs/picorv32a/runs/24-09_19-19/results/synthesis/picorv32a.synthesis_cts.v
+read_verilog /openLANE_flow/designs/picorv32a/runs/05-01_18-52/results/synthesis/picorv32a.synthesis_cts.v
 
 # Read library for design
 read_liberty $::env(LIB_SYNTH_COMPLETE)
@@ -1371,11 +1356,8 @@ set ::env(CTS_CLK_BUFFER_LIST) [linsert $::env(CTS_CLK_BUFFER_LIST) 0 sky130_fd_
 echo $::env(CTS_CLK_BUFFER_LIST)
 ```
 
-Screenshots of commands run and timing report generated
+Screenshots of timing report generated
 
-![Screenshot from 2024-10-01 20-03-17](https://github.com/user-attachments/assets/fc7a09b6-5dae-4a52-8683-a59a0b720985)
-
-![Screenshot from 2024-10-01 20-10-38](https://github.com/user-attachments/assets/074db746-939b-444f-8eb6-f8bdae92fe9f)
 
 ![Screenshot from 2024-10-01 20-10-55](https://github.com/user-attachments/assets/a551d5b0-e3a4-4170-aff3-b77537e49df8)
 
@@ -1450,37 +1432,17 @@ run_cts
 gen_pdn 
 ```
 
-Screenshots of power distribution network run
-
-![WhatsApp Image 2024-10-03 at 17 22 38_b14b7a46](https://github.com/user-attachments/assets/28e855ad-5030-482a-bee6-8dcb216baf27)
-
-![WhatsApp Image 2024-10-03 at 17 22 54_7deec917](https://github.com/user-attachments/assets/0c44b425-2801-4557-8285-03f4bf7644a3)
-
-![WhatsApp Image 2024-10-03 at 17 22 55_3ebd028d](https://github.com/user-attachments/assets/18b61353-303c-415d-b589-a17af7bc7f22)
-
-![WhatsApp Image 2024-10-03 at 17 22 57_36971d23](https://github.com/user-attachments/assets/0fe3a81f-8ceb-45fa-907c-1e4210f10773)
-
-![WhatsApp Image 2024-10-03 at 17 23 04_19fdcd4a](https://github.com/user-attachments/assets/8df0645b-49c1-44e5-970b-284263580f9d)
-
-![WhatsApp Image 2024-10-03 at 17 23 04_6e17a928](https://github.com/user-attachments/assets/7739360a-da83-4fd2-9c76-40d164be4d79)
-
-![WhatsApp Image 2024-10-03 at 17 23 04_e632bd85](https://github.com/user-attachments/assets/fc64bf06-2f70-4aa6-9820-323af35462bd)
-
-![WhatsApp Image 2024-10-03 at 17 23 07_ff46047f](https://github.com/user-attachments/assets/d3fd25c1-79d2-4cf4-bd90-37b09384a82d)
 
 Commands to load PDN def in magic in another terminal
 
 ```bash
 # Change directory to path containing generated PDN def
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/03-10_11-37/tmp/floorplan/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/05-01_18-52/tmp/floorplan/
 
 # Command to load the PDN def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read 14-pdn.def &
 ```
 
-Screenshot of commands ran 
-
-![WhatsApp Image 2024-10-03 at 17 23 14_465b8aa5](https://github.com/user-attachments/assets/afaa1126-fe56-458c-a992-6e4f48eb56f3)
 
 Screenshots of PDN def
 
@@ -1505,15 +1467,13 @@ echo $::env(ROUTING_STRATEGY)
 run_routing
 ```
 
-Screenshots of routing run
 
-![WhatsApp Image 2024-10-03 at 17 23 14_55db3b43](https://github.com/user-attachments/assets/5074689f-904d-4912-a12f-4560883d370c)
 
 Commands to load routed def in magic in another terminal
 
 ```bash
 # Change directory to path containing routed def
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/03-10_11-37/results/routing/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/05-01_18-52/results/routing/
 
 # Command to load the routed def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def &
@@ -1532,7 +1492,7 @@ Screenshots of routed def
 ![WhatsApp Image 2024-10-03 at 18 06 18_780bcad5](https://github.com/user-attachments/assets/1e2fe344-79e9-4508-bff4-ca064b58a9f5)
 
 
-Screenshot of fast route guide present in `openlane/designs/picorv32a/runs/03-10_11-37/tmp/routing` directory
+Screenshot of fast route guide present in `openlane/designs/picorv32a/runs/05-01_18-52/tmp/routing` directory
 
 ![WhatsApp Image 2024-10-03 at 18 06 18_48aa995e](https://github.com/user-attachments/assets/67df4402-5a1d-48bf-bccd-876768f3c509)
 
@@ -1546,13 +1506,9 @@ cd /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/scripts/spef_e
 
 
 # Command extract spef
-python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/03-10_11-37/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/03-10_11-37/results/routing/picorv32a.def
+python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/05-01_18-52/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/05-01_18-52/results/routing/picorv32a.def
 ```
-Spef file is present in location `Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/03-10_11-37/results/routing `
 
-Screenshot of spef file
-
-![WhatsApp Image 2024-10-03 at 20 09 22_ef10dc78](https://github.com/user-attachments/assets/eff2ec0d-3633-46ce-a24a-343561dc4f29)
 
 
 #### 4. Post-Route OpenSTA timing analysis with the extracted parasitics of the route.
@@ -1564,10 +1520,10 @@ Commands to be run in OpenLANE flow to do OpenROAD timing analysis with integrat
 openroad
 
 # Reading lef file
-read_lef /openLANE_flow/designs/picorv32a/runs/03-10_11-37/tmp/merged.lef
+read_lef /openLANE_flow/designs/picorv32a/runs/05-01_18-52/tmp/merged.lef
 
 # Reading def file
-read_def /openLANE_flow/designs/picorv32a/runs/03-10_11-37/results/routing/picorv32a.def
+read_def /openLANE_flow/designs/picorv32a/runs/05-01_18-52/results/routing/picorv32a.def
 
 # Creating an OpenROAD database to work with
 write_db pico_route.db
@@ -1576,7 +1532,7 @@ write_db pico_route.db
 read_db pico_route.db
 
 # Read netlist post CTS
-read_verilog /openLANE_flow/designs/picorv32a/runs/03-10_11-37/results/synthesis/picorv32a.synthesis_preroute.v
+read_verilog /openLANE_flow/designs/picorv32a/runs/05-01_18-52/results/synthesis/picorv32a.synthesis_preroute.v
 
 # Read library for design
 read_liberty $::env(LIB_SYNTH_COMPLETE)
@@ -1591,7 +1547,7 @@ read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
 set_propagated_clock [all_clocks]
 
 # Read SPEF
-read_spef /openLANE_flow/designs/picorv32a/runs/03-10_11-37/results/routing/picorv32a.spef
+read_spef /openLANE_flow/designs/picorv32a/runs/05-01_18-52/results/routing/picorv32a.spef
 
 # Generating custom timing report
 report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
@@ -1602,13 +1558,7 @@ exit
 
 Screenshots of commands run and timing report generated
 
-![WhatsApp Image 2024-10-03 at 20 09 24_aff1b312](https://github.com/user-attachments/assets/78b9dcf2-6810-4c81-a716-f8047b16daec)
 
-![WhatsApp Image 2024-10-03 at 20 09 24_292ee6e2](https://github.com/user-attachments/assets/07378088-066b-4bd2-a5c4-344875ea6945)
-
-![WhatsApp Image 2024-10-03 at 20 09 24_cd06715e](https://github.com/user-attachments/assets/45a93aa7-035a-48da-afe9-8bd98b5a24a0)
-
-![WhatsApp Image 2024-10-03 at 20 09 24_f0b15510](https://github.com/user-attachments/assets/7871c525-d9a0-46e6-b482-99eaaa5d2e55)
 
 
 
