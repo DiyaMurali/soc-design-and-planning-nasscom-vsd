@@ -1,7 +1,7 @@
 
-# VSD - Digital VLSI SoC Design and Planning
+# Digital VLSI SoC Design and Planning
 
-2 Week digital VLSI SoC design and planning workshop with complete RTL2GDSII flow organised by VSD in collaboration with NASSCOM (Advanced Physical Design using OpenLANE/Sky130)
+> 2 Week digital VLSI SoC design and planning workshop with complete RTL2GDSII flow organised by VSD in collaboration with NASSCOM (Advanced Physical Design using OpenLANE/Sky130)
 
 
 
@@ -53,20 +53,16 @@ exit
  ```
 
 Screenshots of the above commands ran
-
-![Screenshot 2024-09-23 175829](https://github.com/user-attachments/assets/50f45b7a-925f-4494-9fde-8aa065e4b67d)
-
+<img width="1465" alt="1 final" src="https://github.com/user-attachments/assets/595bc2e8-9a27-49a0-850f-5ea08c970c2f" />
 
 
-![IMG-20240923-WA0013](https://github.com/user-attachments/assets/947472b4-1c15-47b1-971c-6f065d3f2de6)
+
+<img width="1465" alt="2 final" src="https://github.com/user-attachments/assets/26613b8b-d750-4f29-ab2f-1590bc5f2fdd" />
+
 
 Screenshots of synthesis statistics report file with required values to calculate flop ratio.
 
-![WhatsApp Image 2024-09-29 at 16 39 02_9aa1acda](https://github.com/user-attachments/assets/885fdad3-4fea-49d4-be81-951881e6ec29)
-
-
-
-![WhatsApp Image 2024-09-29 at 16 39 02_7e77b4cf](https://github.com/user-attachments/assets/473bba60-39b2-4f04-bd74-4c40472623ec)
+<img width="1465" alt="3 final" src="https://github.com/user-attachments/assets/ed08651e-17e1-4c52-8e9c-32627359a24d" />
 
 Calculation of Flop Ratio and DFF% from synthesis statistics report file
 
@@ -89,8 +85,8 @@ Section 2 tasks:-
 4. Run 'picorv32a' design congestion aware placement using OpenLANE flow and generate necessary outputs.
 5. Load generated placement def in magic tool and explore the placement.
   
-  ```math
-Area\ of die in microns = Die width in microns * Die height in microns
+```
+Area of die in microns = Die width in microns * Die height in microns
 ```
 #### 1. Run 'picorv32a' design floorplan using OpenLANE flow and generate necessary outputs.
 
@@ -123,41 +119,23 @@ run_floorplan
 
 Screenshot of floorplan run
 
-![Screenshot 2024-09-23 180522](https://github.com/user-attachments/assets/035e3cff-be3f-4bba-868b-2ebfab04c399)
+<img width="1465" alt="4 final" src="https://github.com/user-attachments/assets/432701e9-3134-4649-9889-cfd52238311c" />
 
 #### 2. Calculate the die area in microns from the values in floorplan def.
 
 Screenshot of contents of floorplan def
 
-![WhatsApp Image 2024-09-29 at 16 39 05_9222792f](https://github.com/user-attachments/assets/aee6c325-29ac-4f44-bf2c-98ec70c60863)
+<img width="1465" alt="5 final" src="https://github.com/user-attachments/assets/c31ceb8c-8f82-4392-82f8-780e5444d2e8" />
 
 According to floorplan def
 
-```math
+```
 1000 Unit Distance = 1 Micron
-```
-
-```math
 Die width in unit distance = 660685 - 0 = 660685
-```
-
-```math
 Die height in unit distance = 671405 - 0 = 671405
-```
-
-```math
 Distance in microns = Value in Unit Distance/1000
-```
-
-```math
 Die width in microns = 660685/1000 = 660.685 Microns
-```
-
-```math
 Die height in microns = 671405/1000 = 671.405 Microns
-```
-
-```math
 Area of die in microns = 660.685 * 671.405 = 443587.212425 Square Microns
 ```
 
@@ -166,7 +144,7 @@ Commands to load floorplan def in magic in another terminal
 
 ```bash
 # Change directory to path containing generated floorplan def
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/23-09_12-27/results/floorplan/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/05-01_18-38/results/floorplan/
 
 # Command to load the floorplan def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
@@ -174,29 +152,31 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshots of floorplan def in magic
 
-![WhatsApp Image 2024-09-29 at 16 39 25_91c53eb6](https://github.com/user-attachments/assets/eb683466-fd15-4fb5-b9a9-477e7e3acd37)
+<img width="1465" alt="6 final" src="https://github.com/user-attachments/assets/603cd029-e63a-4d69-876d-422d6bcb13d6" />
 
 
 Equidistant placement of ports
 
-![WhatsApp Image 2024-10-02 at 19 48 20_8711e371](https://github.com/user-attachments/assets/29fa07e3-5ca1-41c0-8169-217e8d8fa141)
+<img width="1465" alt="7 final" src="https://github.com/user-attachments/assets/d2155335-4077-46a6-a370-470f794075ff" />
+
 
 Port layer as set through config.tcl
 
-![WhatsApp Image 2024-09-29 at 16 39 57_cafba4d5](https://github.com/user-attachments/assets/92b238cb-cb07-4eb9-abe8-c5c3df2c832e)
+<img width="1465" alt="8 final" src="https://github.com/user-attachments/assets/8e3e7613-7fe6-42c4-b407-67fb368829bb" />
 
-![WhatsApp Image 2024-10-02 at 19 56 50_d3eb2cd7](https://github.com/user-attachments/assets/c2d53889-bd53-4e0d-99f4-25e063e009f6)
+<img width="1465" alt="9 final" src="https://github.com/user-attachments/assets/a89ab319-6678-440b-a715-5fbe611ed6c6" />
+
 
 Decap Cells and Tap Cells
 
-![WhatsApp Image 2024-09-29 at 16 39 57_be8f7a4a](https://github.com/user-attachments/assets/ff2ef567-f7dd-4008-adb2-de67d72cff64)
+<img width="1465" alt="10 final" src="https://github.com/user-attachments/assets/d66a5d99-d10a-48f4-8a4f-9e34b0a502c6" />
 
 Diogonally equidistant Tap cells
-![WhatsApp Image 2024-09-29 at 16 39 57_f90bfbae](https://github.com/user-attachments/assets/fc3d8ffa-bd61-41a0-888e-0043c109d44f)
+<img width="1465" alt="11 final" src="https://github.com/user-attachments/assets/83e407f9-5f1e-4688-80fe-ada10cdec442" />
 
 Unplaced standard cells at the origin
 
-![WhatsApp Image 2024-09-29 at 16 39 57_394a3396](https://github.com/user-attachments/assets/f6b64d58-ca1d-4238-bfb7-6ef16d051c73)
+<img width="1465" alt="12 final" src="https://github.com/user-attachments/assets/ab78850d-8fae-4448-8188-f960b0182a7d" />
 
 Command to run placement
 
@@ -206,9 +186,9 @@ run_placement
 ```
 
 Screenshots of placement run
-![image](https://github.com/user-attachments/assets/1e485942-40e4-4e35-ad1b-452fe6198e49)
+<img width="1465" alt="13 final" src="https://github.com/user-attachments/assets/d6f5475b-188a-4049-9846-87e4af0fad0a" />
 
-![WhatsApp Image 2024-09-29 at 16 38 57_1f1a60d3](https://github.com/user-attachments/assets/78d1f928-5860-4b8a-9285-c1c99a23b9b5)
+<img width="1465" alt="14 final" src="https://github.com/user-attachments/assets/31265e2e-daae-4d02-b0f5-a05924829f0e" />
 
 #### 5. Load generated placement def in magic tool and explore the placement.
 
@@ -216,7 +196,7 @@ Commands to load placement def in magic in another terminal
 
 ```bash
 # Change directory to path containing generated placement def
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/23-09_12-27/results/placement/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/05-01_18-52/results/placement/
 
 # Command to load the placement def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
@@ -224,11 +204,12 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshots of floorplan def in magic
 
-![WhatsApp Image 2024-09-29 at 16 39 57_8c88e123](https://github.com/user-attachments/assets/91cfb575-6623-4757-af53-54ea87b9d613)
+<img width="1465" alt="15 final" src="https://github.com/user-attachments/assets/8c0d8214-ba7f-48e8-90ce-7d67c38a2928" />
 
 Standard cells legally placed 
 
-![WhatsApp Image 2024-09-29 at 16 39 57_1f5d5090](https://github.com/user-attachments/assets/8e2c9ed2-3a4b-4537-b8ba-b5b4fda253e0)
+<img width="1465" alt="16 final" src="https://github.com/user-attachments/assets/7bdbbff4-998c-4299-8c2a-b8c1b43870f3" />
+
 
 Commands to exit from current run
 
@@ -280,35 +261,36 @@ magic -T sky130A.tech sky130_inv.mag &
 
 Screenshot of commands run
 
-![Screenshot from 2024-09-29 16-44-15](https://github.com/user-attachments/assets/976404d0-2213-4131-8de4-53a1db53b24e)
+<img width="1465" alt="17 final" src="https://github.com/user-attachments/assets/3e30d304-653b-4d7c-a5b3-d14665cff889" />
+
 
 #### 2. Load the custom inverter layout in magic and explore.
 
 Screenshot of custom inverter layout in magic
 
-![Screenshot from 2024-09-29 16-44-23](https://github.com/user-attachments/assets/1802f534-018f-472c-b3ab-5a1cdfb4e92b)
+<img width="1465" alt="18 final" src="https://github.com/user-attachments/assets/1cb3128f-5e5d-43c8-8946-bee7187a12df" />
 
 NMOS and PMOS identified
 
-![Screenshot from 2024-09-29 23-01-52](https://github.com/user-attachments/assets/691029de-64f7-402e-9bc0-5d75652f87da)
+<img width="1465" alt="19 final" src="https://github.com/user-attachments/assets/7414cefc-60bf-4f2a-8a2b-ac36685f4689" />
 
-![Screenshot from 2024-09-29 21-56-31](https://github.com/user-attachments/assets/1690cf74-d4ec-4287-8294-e834ee2b2a9c)
+
+<img width="1465" alt="20 final" src="https://github.com/user-attachments/assets/2cf282ab-d38e-4004-bbee-e630efc4db7e" />
 
 Output Y connectivity to PMOS and NMOS drain verified
 
-![Screenshot from 2024-09-29 23-16-09 (1)](https://github.com/user-attachments/assets/20eab7c0-275d-4516-95cb-412cb42c54a9)
+<img width="1465" alt="21 final" src="https://github.com/user-attachments/assets/fe9b93fe-373c-493c-8046-70dc4a771bbc" />
 
 PMOS source connectivity to VDD (here VPWR) verified
 
-![Screenshot from 2024-09-29 23-16-41](https://github.com/user-attachments/assets/b6935c8e-19d8-42d3-818a-5973b4e7ce2e)
-
+<img width="1465" alt="22 final" src="https://github.com/user-attachments/assets/634d9cb3-334f-4456-8128-51803e68083c" />
 NMOS source connectivity to VSS (here VGND) verified
 
-![Screenshot from 2024-09-29 23-16-30](https://github.com/user-attachments/assets/bf9474a7-f896-41b4-a652-3e16391aa9fd)
+<img width="1465" alt="23 final" src="https://github.com/user-attachments/assets/eb94ad3e-674c-4ca0-b3e9-da07b1e52f92" />
 
 Deleting necessary layout part to see DRC error
 
-![Screenshot from 2024-09-29 23-22-24](https://github.com/user-attachments/assets/e7156e5f-6145-4ff0-a188-3699a23af76f)
+<img width="1465" alt="24 final" src="https://github.com/user-attachments/assets/b1095e15-624f-487f-89e5-15a9eb862370" />
 
 #### 3. Spice extraction of inverter in magic.
 
@@ -330,21 +312,21 @@ ext2spice
 
 Screenshot of tkcon window after running above commands
 
-![Screenshot from 2024-09-29 23-20-42](https://github.com/user-attachments/assets/04d021de-6abe-4f69-b01c-307e3d64a6fa)
+<img width="1011" alt="25 final" src="https://github.com/user-attachments/assets/d83012d2-9d96-4740-b047-1d267ba06089" />
 
 Screenshot of created spice file
 
-![Screenshot from 2024-09-29 23-24-09](https://github.com/user-attachments/assets/461c1af0-6e90-4142-b173-93dbc9090632)
+<img width="1011" alt="26 final" src="https://github.com/user-attachments/assets/fdecd097-ac8a-4f1e-ad65-827873f07349" />
+
 
 #### 4. Editing the spice model file for analysis through simulation.
 
 Measuring unit distance in layout grid
-
-![Screenshot from 2024-09-29 23-27-51](https://github.com/user-attachments/assets/46679748-204b-4576-b02b-51f10450408c)
+<img width="1009" alt="27 final" src="https://github.com/user-attachments/assets/79a63870-4c55-4359-b3f3-dfa633b67cab" />
 
 Final edited spice file ready for ngspice simulation
 
-![Screenshot from 2024-09-29 23-34-40](https://github.com/user-attachments/assets/963b9eb4-8c09-4ec5-8b27-2952af39d2e1)
+<img width="1002" alt="28 final" src="https://github.com/user-attachments/assets/866f90b8-9bfe-43ea-844f-45d85229418c" />
 
 #### 5. Post-layout ngspice simulations.
 
@@ -360,14 +342,15 @@ plot y vs time a
 
 Screenshots of ngspice run
 
-![Screenshot from 2024-09-29 23-36-57](https://github.com/user-attachments/assets/c67caf19-2d2f-4e5a-a0ba-126457fc09cc)
+<img width="1239" alt="29 final" src="https://github.com/user-attachments/assets/698daf9e-b2b8-49f6-8106-4c7ffd80f726" />
 
-![Screenshot from 2024-09-29 23-37-26](https://github.com/user-attachments/assets/9ce5d8c9-5891-45a8-baf5-678b78828f1b)
+
+<img width="1232" alt="30 final" src="https://github.com/user-attachments/assets/58fad7f5-793d-4c51-ae5f-dc47500a994c" />
+
 
 Screenshot of generated plot
 
-![Screenshot from 2024-09-29 23-38-03](https://github.com/user-attachments/assets/9b58d19a-19f2-485a-b8bd-62e7d95721bc)
-
+<img width="1234" alt="31 final" src="https://github.com/user-attachments/assets/9398670b-f6f3-4bde-bb66-c3a50d009e4e" />
 Rise transition time calculation
 
 
@@ -382,19 +365,22 @@ Rise transition time = Time taken for o/p to rise to 80% - Time taken for o/p to
 ```
 20% Screenshots
 
-![Screenshot from 2024-09-29 23-42-38](https://github.com/user-attachments/assets/76b8523e-a726-4edf-8fbd-34d373298cd1)
+<img width="1233" alt="32 final" src="https://github.com/user-attachments/assets/ba98412b-17f5-4786-80d3-a42da5d94f48" />
 
-![Screenshot from 2024-09-29 23-42-44](https://github.com/user-attachments/assets/6629e331-30ab-4807-9d4c-b2a37c039721)
+<img width="1236" alt="33 final" src="https://github.com/user-attachments/assets/c44c5e54-fa1a-4329-be37-ab512b3a4658" />
+
 
 
 80% Screenshots
 
-![Screenshot from 2024-09-29 23-43-57](https://github.com/user-attachments/assets/fc5b66e7-2c38-4be6-8d81-12b8b24ff8e9)
+<img width="1234" alt="34 final" src="https://github.com/user-attachments/assets/61ca92d4-62a1-4cc8-af86-7ec33830527d" />
 
-![Screenshot from 2024-09-29 23-43-49](https://github.com/user-attachments/assets/a5841cb8-1244-4805-9c9d-979dde29ee05)
+
+<img width="1232" alt="35 final" src="https://github.com/user-attachments/assets/f973873d-7987-4bd7-b617-3d16a9a7cd4d" />
+
 
 ```
-Rise transition time = 2.29505 - 2.19545 = 0.0996 ns = 99.6 ps
+Rise transition time = 2.2463 - 2.18242 = 0.06388 ns = 63.88 ps
 ```
 
 Fall transition time calculation
@@ -411,18 +397,20 @@ Fall transition time = Time taken for output to fall to 20% - Time taken for out
 
 20% Screenshots
 
-![Screenshot from 2024-10-02 21-58-28 1](https://github.com/user-attachments/assets/49ca4b44-e322-4d3f-a0bd-7be164d92156)
+<img width="1235" alt="36 final" src="https://github.com/user-attachments/assets/416d5309-16b4-4a05-a459-987235465e91" />
 
-![Screenshot from 2024-10-02 21-58-32 1](https://github.com/user-attachments/assets/2de43fd6-7beb-4361-94f3-94ec3a61c302)
+
+<img width="1230" alt="37 final" src="https://github.com/user-attachments/assets/4355c204-9431-410e-801e-8f861b836536" />
+
 
 80% Screenshots
 
-![Screenshot from 2024-10-02 21-59-25 1](https://github.com/user-attachments/assets/835a9e0d-6252-4379-bbc7-b4107e71a125)
+<img width="1214" alt="38 final" src="https://github.com/user-attachments/assets/d75b98bb-0bbe-430f-8856-45e18f9ce277" />
 
-![Screenshot from 2024-10-02 21-59-29 1](https://github.com/user-attachments/assets/8090ac3e-a0e7-4801-ab4b-2109a959d9fa)
 
+<img width="1227" alt="39 final" src="https://github.com/user-attachments/assets/28184bdf-e670-4fe7-b183-22b9cab09285" />
 ```
-Fall transition time = 4.09559 - 4.0531 = 0.04249 ns = 42.49 ps
+Fall transition time = 4.09555 - 4.0536 = 0.04195 ns = 41.95 ps
 ```
 
 Rise Cell Delay Calculation
@@ -436,12 +424,13 @@ Rise Cell Delay = Time taken for output to rise to 50% - Time taken for input to
 
 50% Screenshots
 
-![WhatsApp Image 2024-10-02 at 22 13 49_2de01a5d](https://github.com/user-attachments/assets/3c3f1b7d-ef7d-4fec-9509-49eae308a346)
+<img width="1226" alt="40 final" src="https://github.com/user-attachments/assets/a850c178-d361-46d1-82ee-7e2c92c06fdc" />
 
-![WhatsApp Image 2024-10-02 at 22 13 49_7acceb53](https://github.com/user-attachments/assets/ea5c8c72-80fe-42ac-9833-69af1284119b)
+
+<img width="1230" alt="41 final" src="https://github.com/user-attachments/assets/9a40207f-f944-44b3-94e7-3999c1550cbe" />
 
 ```
-Rise Cell Delay = 2.21174 - 2.15011 = 0.06163 ns = 61.63 ps
+Rise Cell Delay = 2.21144 - 2.15008 = 0.06136 ns = 61.36 ps
 ```
 
 Fall Cell Delay Calculation
@@ -455,12 +444,14 @@ Fall Cell Delay = Time taken for output to fall to 50% - Time taken for input to
 
 50% Screenshots
 
-![WhatsApp Image 2024-10-02 at 22 13 49_61f8fb41](https://github.com/user-attachments/assets/20b9f4f4-914d-4c5a-8b19-df8c4c8e8183)
+<img width="1228" alt="42 final" src="https://github.com/user-attachments/assets/b6bdbb43-811f-4d04-9821-2b35cb5736a7" />
 
-![WhatsApp Image 2024-10-02 at 22 13 49_7131e0b9](https://github.com/user-attachments/assets/cab04013-228a-4fb4-9f8f-b952c089fc67)
+
+<img width="1227" alt="43 final" src="https://github.com/user-attachments/assets/d07dbfd9-c852-4d3f-96c5-2ee11073f485" />
+
 
 ```
-Fall Cell Delay = 4.07821 - 4.05 = 0.02821 ns = 28.21 ps
+Fall Cell Delay = 4.07807 - 4.05 = 0.02807 ns = 28.07 ps
 ```
 
 #### 6. Find problem in the DRC section of the old magic tech file for the skywater process and fix them.
@@ -495,24 +486,26 @@ magic -d XR &
 
 Screenshot of .magicrc file
 
-![Screenshot from 2024-09-29 23-50-28](https://github.com/user-attachments/assets/660fecab-a6d0-47ea-9135-795274c7785e)
+<img width="1168" alt="44 final" src="https://github.com/user-attachments/assets/709d0160-d43c-4fd1-a73c-2b5497ab87df" />
 
 **Incorrectly implemented poly.9 simple rule correction**
 
 Screenshot of poly rules
 
-![image](https://github.com/user-attachments/assets/e53003b9-0196-4743-a69d-b22ab4cb815a)
+<img width="1170" alt="45 final" src="https://github.com/user-attachments/assets/e19192f7-1547-4a7e-bc41-9e87c155f717" />
+
 
 Incorrectly implemented poly.9 rule no drc violation even though spacing < 0.48u
 
-![WhatsApp Image 2024-10-02 at 22 26 37_97dd7e0c](https://github.com/user-attachments/assets/c83a30c6-3188-4b2a-a7ec-146761ac6f42)
-
+<img width="1138" alt="46 final" src="https://github.com/user-attachments/assets/a7a9deeb-ae96-48ba-be25-271d14a14969" />
 
 New commands inserted in sky130A.tech file to update drc
 
-![Screenshot from 2024-09-30 00-15-50](https://github.com/user-attachments/assets/1eec6cb7-7eb4-47ef-ac09-c7bee9c869a0)
+<img width="1131" alt="47 final" src="https://github.com/user-attachments/assets/b0c5fe67-fb3c-4da8-8e2f-3cc686827849" />
 
-![Screenshot from 2024-09-30 00-23-00](https://github.com/user-attachments/assets/7f19e46c-6051-41ed-84f2-3570346e12c2)
+
+<img width="1133" alt="48 final" src="https://github.com/user-attachments/assets/922bc383-2152-4d79-a0ae-ebb958c575cb" />
+
 
 
 
@@ -531,24 +524,24 @@ drc why
 
 Screenshot of magic window with rule implemented
 
-![Screenshot from 2024-09-30 00-25-10](https://github.com/user-attachments/assets/15d66e88-58b2-4016-9d65-39bf846981d1)
+<img width="1137" alt="49 final" src="https://github.com/user-attachments/assets/f4141319-e243-4ee2-a3b4-c32b66deb950" />
 
-![Screenshot from 2024-09-30 00-46-55](https://github.com/user-attachments/assets/f1bb5420-cf49-4e5a-a650-dcc64e65528d)
+
 
 **Incorrectly implemented difftap.2 simple rule correction**
 
 Screenshot of difftap rules
 
-![image](https://github.com/user-attachments/assets/0e9c00e5-c310-402e-89a9-3dd2018a7e14)
+<img width="1166" alt="50 final" src="https://github.com/user-attachments/assets/e75380fc-ec33-49ea-b1ef-e2189051426d" />
+
 
 
 Incorrectly implemented difftap.2 rule no drc violation even though spacing < 0.42u
 
-![WhatsApp Image 2024-10-02 at 22 36 20_7731d86c](https://github.com/user-attachments/assets/6e08229c-a654-49be-90f5-5ca3f1e5046f)
+<img width="1140" alt="51 final" src="https://github.com/user-attachments/assets/9995bb35-48a9-47fa-9a75-20966ecf8861" />
 
 New commands inserted in sky130A.tech file to update drc
-
-![WhatsApp Image 2024-10-02 at 22 36 18_a723a90d](https://github.com/user-attachments/assets/3a975ab9-e72e-4d6c-b8d1-0cd3d9a7e819)
+<img width="1136" alt="52 final" src="https://github.com/user-attachments/assets/ec823c5f-a199-48ee-ba02-9f67077c22da" />
 
 
 Commands to run in tkcon window
@@ -566,23 +559,27 @@ drc why
 
 Screenshot of magic window with rule implemented
 
-![WhatsApp Image 2024-10-02 at 22 36 19_94d342a2](https://github.com/user-attachments/assets/5ab324b3-a3d3-4804-bfb0-77c63879c513)
+<img width="1136" alt="53 final" src="https://github.com/user-attachments/assets/d6d9e5b4-13e6-4ac8-baaa-20e67940eaf0" />
+
 
 **Incorrectly implemented nwell.4 complex rule correction**
 
 Screenshot of nwell rules
 
-![image](https://github.com/user-attachments/assets/b2b5fdf1-4736-4a84-9866-62863bf1ff9c)
+<img width="1170" alt="54 final" src="https://github.com/user-attachments/assets/4f7d430c-3fc3-4aa8-88e5-8fae57d0ed55" />
+
 
 Incorrectly implemented nwell.4 rule no drc violation even though no tap present in nwell
 
-![Screenshot from 2024-09-30 01-12-20](https://github.com/user-attachments/assets/5fd41b1e-0f83-422a-a2a7-90e4e61d1ce1)
+<img width="1134" alt="55 final" src="https://github.com/user-attachments/assets/00f7f3e7-a387-4ece-be25-a7ff17e34248" />
 
 New commands inserted in sky130A.tech file to update drc
 
-![Screenshot from 2024-09-30 01-04-06](https://github.com/user-attachments/assets/7b1b025b-456a-4749-beb9-d9704d486bdb)
+<img width="1143" alt="56 final" src="https://github.com/user-attachments/assets/1fdc60d9-515d-407a-8303-c671d3870423" />
 
-![Screenshot from 2024-09-30 01-04-28](https://github.com/user-attachments/assets/4a2cca17-2d79-4329-99a7-b8d60602e968)
+
+<img width="1130" alt="57" src="https://github.com/user-attachments/assets/b5cdfe93-bd55-4a5d-98a3-973e4efdd781" />
+
 
 Commands to run in tkcon window
 
@@ -602,7 +599,7 @@ drc why
 
 Screenshot of magic window with rule implemented
 
-![Screenshot from 2024-09-30 01-12-20](https://github.com/user-attachments/assets/3897d886-f14d-4870-9a56-f15195fa8460)
+<img width="1130" alt="58" src="https://github.com/user-attachments/assets/503ab8d7-ddcc-40de-ab58-88a3869fb3eb" />
 
 ## Section 4 - Pre-layout timing analysis and importance of good clock tree 
 
@@ -645,7 +642,7 @@ magic -T sky130A.tech sky130_inv.mag &
 
 Screenshot of tracks.info of sky130_fd_sc_hd
 
-![Screenshot from 2024-10-01 00-25-00](https://github.com/user-attachments/assets/e9b710a7-2255-4f3b-8a63-9595d13339d3)
+<img width="1139" alt="59" src="https://github.com/user-attachments/assets/72f916a5-9f27-47c0-836d-aae72b770e3a" />
 
 Commands for tkcon window to set grid as tracks of locali layer
 
@@ -659,34 +656,42 @@ grid 0.46um 0.34um 0.23um 0.17um
 
 Screenshot of commands run
 
-![Screenshot from 2024-10-01 00-26-14](https://github.com/user-attachments/assets/b513ad4e-a874-4e0b-85b7-00739e3ceb9a)
+<img width="1136" alt="60" src="https://github.com/user-attachments/assets/33b11e2e-02c4-4749-897a-07b395725aac" />
+
 
 Condition 1 verified
 
-![Screenshot from 2024-10-01 17-19-21](https://github.com/user-attachments/assets/78c93533-e0fc-4961-906c-c541be279f57)
+<img width="1138" alt="61" src="https://github.com/user-attachments/assets/fffdb238-74ec-43e2-bd3f-5eeae45d97cc" />
+
 
 Condition 2 verified
 
-```math
-Horizontal track pitch = 0.46 um
-```
 
-![Screenshot from 2024-10-01 17-27-51](https://github.com/user-attachments/assets/8bc0218a-14e6-4e9f-b776-daf01ade4c59)
+**Horizontal track pitch** = 0.46 µm
 
-```math
-Width of standard cell = 1.38 um = 0.46 * 3
-```
+
+
+<img width="1070" alt="62" src="https://github.com/user-attachments/assets/faecb647-8a93-4a30-914d-2cffad24318a" />
+
+
+
+**Width of standard cell** = 1.38 µm = 0.46 × 3
+
+
 
 Condition 3 verified
 
-```math
-Vertical track pitch = 0.34 um
-```
-![Screenshot from 2024-10-01 17-27-31](https://github.com/user-attachments/assets/1d1b5e22-690d-41bc-af03-2d7c7e313c49)
 
-```math
-Height of standard cell = 2.72 um = 0.34 * 8
-```
+**Vertical track pitch** = 0.34 µm
+
+
+
+<img width="1069" alt="63" src="https://github.com/user-attachments/assets/2a066da5-558c-4602-a81d-8567eb6342cd" />
+
+
+**Height of standard cell** = 2.72 µm = 0.34 × 8
+
+
 
 #### 2. Save the finalized layout with custom name and open it.
 
@@ -706,7 +711,7 @@ magic -T sky130A.tech sky130_vsdinv.mag &
 
 Screenshot of newly saved layout
 
-![Screenshot from 2024-10-01 17-30-26](https://github.com/user-attachments/assets/b2ed6f61-16ec-4fd3-a0f2-1fd0ec160337)
+<img width="1102" alt="64" src="https://github.com/user-attachments/assets/24a8313e-8cc4-443a-a382-fb65b94effa3" />
 
 #### 3. Generate lef from the layout.
 
@@ -719,11 +724,12 @@ lef write
 
 Screenshot of command run
 
-![Screenshot from 2024-10-01 17-30-39](https://github.com/user-attachments/assets/a8adcfa5-0f09-4f15-a3ee-ac9c398530f2)
+<img width="1072" alt="65" src="https://github.com/user-attachments/assets/b3723d5c-3cfb-4929-82d7-d9c7e60558d4" />
+
 
 Screenshot of newly created lef file
 
-![Screenshot from 2024-10-01 17-31-41](https://github.com/user-attachments/assets/2229d548-383e-478c-a128-8d97fe052c6b)
+<img width="1070" alt="66" src="https://github.com/user-attachments/assets/91c857a8-2af6-492a-a2e3-faec35147773" />
 
 #### 4. Copy the newly generated lef and associated required lib files to 'picorv32a' design 'src' directory.
 
@@ -745,7 +751,7 @@ ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 
 Screenshot of commands run
 
-![Screenshot from 2024-10-01 17-37-05](https://github.com/user-attachments/assets/b6741912-924c-4b63-ad2a-8f6e45890549)
+<img width="1175" alt="67" src="https://github.com/user-attachments/assets/f9ae47df-7af7-4307-9e98-1fdd472ccaff" />
 
 #### 5. Edit 'config.tcl' to change lib file and add the new extra lef into the openlane flow.
 
@@ -762,7 +768,7 @@ set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/sr
 
 Edited config.tcl to include the added lef and change library to ones we added in src directory
 
-![Screenshot from 2024-10-01 17-45-12](https://github.com/user-attachments/assets/edec9e17-e29e-4fa4-9e1a-f0d201dbd7ba)
+<img width="1070" alt="68" src="https://github.com/user-attachments/assets/ec39fd71-020b-41ed-a0da-605fe4ca40b4" />
 
 #### 6. Run openlane flow synthesis with newly inserted custom inverter cell.
 
@@ -794,23 +800,22 @@ add_lefs -src $lefs
 run_synthesis
 ```
 
-Screenshots of commands run
 
-![Screenshot from 2024-10-01 18-21-52](https://github.com/user-attachments/assets/78028ee7-6ed5-4bf0-b266-f03b56b78884)
+
 
 #### 7. Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters.
 
 Noting down current design values generated before modifying parameters to improve timing
 
-![Screenshot from 2024-10-01 18-21-08](https://github.com/user-attachments/assets/84f6c0d2-54a8-4f17-bfec-b50d57dca767)
+<img width="1173" alt="71" src="https://github.com/user-attachments/assets/9da06b9e-f37d-4142-b2e7-487eb35eadfa" />
 
-![Screenshot from 2024-10-01 18-21-02](https://github.com/user-attachments/assets/b12d9660-f667-4f14-908e-82a4b36845c1)
+<img width="796" alt="70" src="https://github.com/user-attachments/assets/7d03a2b0-f3dc-4f9f-b666-0f02761e5f7b" />
 
 Commands to view and change parameters to improve timing and run synthesis
 
 ```tcl
 # Now once again we have to prep design so as to update variables
-prep -design picorv32a -tag 24-09_19-19 -overwrite
+prep -design picorv32a -tag 05-01_18-52 -overwrite
 
 # Addiitional commands to include newly added lef to openlane flow merged.lef
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
@@ -840,20 +845,21 @@ run_synthesis
 
 Screenshot of merged.lef in `tmp` directory with our custom inverter as macro
 
-![Screenshot from 2024-10-01 18-16-10](https://github.com/user-attachments/assets/1ab634a4-eed4-4440-a4bc-aea13cdebfec)
+<img width="1062" alt="72" src="https://github.com/user-attachments/assets/26aed511-81ee-4892-8282-d69f80d6f354" />
+
 
 Screenshots of commands run
 
-![Screenshot from 2024-10-01 17-53-50](https://github.com/user-attachments/assets/7d99a2f0-1a1a-4ab1-bc8b-8edfdf5ccc9e)
-
-![Screenshot from 2024-10-01 18-26-03](https://github.com/user-attachments/assets/f7eb4275-ad10-4709-b992-d09e1b73cd87)
+<img width="1163" alt="74" src="https://github.com/user-attachments/assets/8e5c844e-917c-4583-bb28-5945964417f3" />
 
 
 Comparing to previously noted run values area has increased and worst negative slack has become 0
 
-![Screenshot from 2024-10-01 18-27-05](https://github.com/user-attachments/assets/0ff437e6-f7e9-4a9c-80dc-f9f3e089ee7f)
+<img width="1171" alt="75" src="https://github.com/user-attachments/assets/4f892d96-3ae2-4577-bc94-fb42ed577c8a" />
 
-![Screenshot from 2024-10-01 18-26-59](https://github.com/user-attachments/assets/6c95c131-5969-47c2-94ca-1dbd6d8cd107)
+<img width="794" alt="76" src="https://github.com/user-attachments/assets/dd475902-eda0-42fd-87c7-1eea0a1233af" />
+
+
 
 #### 8. Once synthesis has accepted our custom inverter we can now run floorplan and placement and verify the cell is accepted in PnR flow.
 
@@ -866,23 +872,18 @@ run_floorplan
 
 Screenshots of command run
 
-![Screenshot from 2024-10-01 18-28-23](https://github.com/user-attachments/assets/f6fabcd0-03dc-4dff-b24a-e86ca2ac7acc)
+<img width="1170" alt="78" src="https://github.com/user-attachments/assets/fa08c829-bc41-4629-8986-08fbe6d42173" />
 
 
 
-Since we are facing unexpected un-explainable error while using `run_floorplan` command, we can instead use the following set of commands available based on information from `Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl` and also based on `Floorplan Commands` section in `Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md`
+We will get an unexpected un-explainable error while using `run_floorplan` command after synthesis, we can instead use the following set of commands available based on information from `Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl` and also based on `Floorplan Commands` section in `Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md`
 
-```tcl
-# Follwing commands are alltogather sourced in "run_floorplan" command
+```
+# Following commands are all together sourced in "run_floorplan" command
 init_floorplan
 place_io
 tap_decap_or
-```
 
-
-Now that floorplan is done we can do placement using following command
-
-```tcl
 # Now we are ready to run placement
 run_placement
 ```
@@ -901,11 +902,13 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshot of placement def in magic
 
-![Screenshot from 2024-10-01 18-33-10](https://github.com/user-attachments/assets/f17f171a-c0f4-4899-a78a-86bf77c0bb66)
+<img width="1195" alt="79" src="https://github.com/user-attachments/assets/4c0f2b09-6a3d-4c35-95a7-02e020925b82" />
+
 
 Screenshot of custom inverter inserted in placement def with proper abutment
 
-![Screenshot from 2024-10-01 18-33-36](https://github.com/user-attachments/assets/b0e85b0b-07a3-4612-9aeb-960c33117322)
+<img width="1195" alt="80" src="https://github.com/user-attachments/assets/056bfba8-3d81-45f3-a3c3-2541fd785fe1" />
+
 
 Command for tkcon window to view internal layers of cells
 
@@ -916,7 +919,8 @@ expand
 
 Abutment of power pins with other cell from library clearly visible
 
-![Screenshot from 2024-10-01 18-34-10](https://github.com/user-attachments/assets/c56417ac-7839-4834-9dc8-96a1e274d409)
+<img width="1202" alt="81" src="https://github.com/user-attachments/assets/9e66dc10-8a13-492c-a710-5f409ea96421" />
+
 
 #### 9. Do Post-Synthesis timing analysis with OpenSTA tool.
 
@@ -955,14 +959,16 @@ run_synthesis
 
 Commands run final screenshot
 
-![WhatsApp Image 2024-10-03 at 16 11 30_75e90ae0](https://github.com/user-attachments/assets/ee7a3b0c-776c-4b9e-a9f8-6512047873a1)
+<img width="1169" alt="82" src="https://github.com/user-attachments/assets/ccf97a70-7a2f-4525-b352-6d83c5aacb35" />
+
 
 
 
 
 Newly created `my_base.sdc` for STA analysis in `openlane/designs/picorv32a/src` directory based on the file `openlane/scripts/base.sdc`
 
-![WhatsApp Image 2024-10-03 at 15 48 58_59b11f79](https://github.com/user-attachments/assets/a9f68fd0-6fa0-417f-ac7b-3389e44335f4)
+<img width="954" alt="83" src="https://github.com/user-attachments/assets/eb5a3d9b-508f-425f-ac0c-29bf46c6731a" />
+
 
 Commands to run STA in another terminal
 
@@ -976,14 +982,16 @@ sta pre_sta.conf
 
 Screenshots of commands run
 
-![WhatsApp Image 2024-10-03 at 16 11 30_887c6655](https://github.com/user-attachments/assets/239b8248-91ce-4043-9762-d75378fffea4)
+<img width="1175" alt="84" src="https://github.com/user-attachments/assets/b3c4d80f-5620-4aad-ab92-edf6f90bb8a8" />
 
-![WhatsApp Image 2024-10-03 at 16 11 35_7f4ff229](https://github.com/user-attachments/assets/dbe7eadc-f960-45e1-b1e7-a14207ace847)
 
-![WhatsApp Image 2024-10-03 at 16 11 35_e3c0b46e](https://github.com/user-attachments/assets/d6d64c97-5610-418f-8638-73609e3c20d3)
+<img width="1166" alt="85" src="https://github.com/user-attachments/assets/91b2fcfb-0f09-40c4-ad9a-9b48dfd28b78" />
 
-![WhatsApp Image 2024-10-03 at 16 11 35_c85c5457](https://github.com/user-attachments/assets/172d7066-854b-444e-a18b-8024858ee986)
 
+<img width="1171" alt="86" src="https://github.com/user-attachments/assets/fbdf8872-6609-489b-887f-28de4f1962a8" />
+
+
+<img width="1164" alt="87" src="https://github.com/user-attachments/assets/f8a23897-830f-451b-86c4-4a4ce1b0ba19" />
 
 Since more fanout is causing more delay we can add parameter to reduce fanout and do synthesis again
 
@@ -1012,9 +1020,9 @@ run_synthesis
 
 Commands run final screenshot
 
-![WhatsApp Image 2024-10-03 at 16 11 35_eeabbcbc](https://github.com/user-attachments/assets/57174759-afc6-4028-9ced-97214ea9787e)
+<img width="1173" alt="88" src="https://github.com/user-attachments/assets/47821bf6-4cc7-46c6-81fc-87c4a9038d9f" />
 
-![WhatsApp Image 2024-10-03 at 16 26 48_7a7edc27](https://github.com/user-attachments/assets/8d4e499a-f3a3-4580-a9a3-c6090e5061e8)
+
 
 Commands to run STA in another terminal
 
@@ -1028,19 +1036,24 @@ sta pre_sta.conf
 
 Screenshots of commands run
 
-![WhatsApp Image 2024-10-03 at 16 26 48_bc213844](https://github.com/user-attachments/assets/473a06cd-4a90-4716-8572-a4e8a9b96ac1)
+<img width="1170" alt="89" src="https://github.com/user-attachments/assets/b93e90ae-c5f2-4b2f-b238-4a8aa5a7d91d" />
 
-![WhatsApp Image 2024-10-03 at 16 26 48_9da211e6](https://github.com/user-attachments/assets/442dd400-18bd-4708-9a99-0a203a7fb057)
 
-![WhatsApp Image 2024-10-03 at 16 26 48_981b622b](https://github.com/user-attachments/assets/eedfb28f-e17d-45d1-9a6f-65919d363656)
+<img width="1164" alt="90" src="https://github.com/user-attachments/assets/d4074905-468f-442f-b652-9aad66f976f8" />
 
-![WhatsApp Image 2024-10-03 at 16 26 48_6ebb809f](https://github.com/user-attachments/assets/ecd33bac-3f0b-4792-8318-519261f5abb6)
+
+<img width="1168" alt="91" src="https://github.com/user-attachments/assets/17bddafc-2d0c-42ed-9fd6-f748e2a59b9f" />
+
+
+<img width="1166" alt="92 final" src="https://github.com/user-attachments/assets/f1444da5-de57-4984-9f74-5c0b32101a47" />
+
+
 
 #### 10. Make timing ECO fixes to remove all violations.
 
 OR gate of drive strength 2 is driving 4 fanouts
 
-![WhatsApp Image 2024-10-03 at 16 26 48_83280348](https://github.com/user-attachments/assets/5882d0f5-c49e-4716-a874-dbe8737e8bc5)
+<img width="1173" alt="93" src="https://github.com/user-attachments/assets/5ba4383e-e54b-4d83-b003-678d82aff420" />
 
 Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
 
@@ -1060,17 +1073,20 @@ report_checks -fields {net cap slew input_pins} -digits 4
 
 Result - slack reduced
 
-![WhatsApp Image 2024-10-03 at 16 26 48_aa40614d](https://github.com/user-attachments/assets/2e4ab95d-bab1-41ae-817c-b8f8349680e7)
+<img width="1175" alt="94" src="https://github.com/user-attachments/assets/dc3a5ba2-9ef6-4b95-8b0f-12f2d7ec3f20" />
 
-![WhatsApp Image 2024-10-03 at 16 26 51_35f25ac7](https://github.com/user-attachments/assets/942a7a25-e8a8-41a7-a03c-e1646a15a7a6)
+<img width="1175" alt="95" src="https://github.com/user-attachments/assets/617c6625-d991-49ef-a908-349ed08e23fa" />
 
-![WhatsApp Image 2024-10-03 at 16 26 51_b243c12d](https://github.com/user-attachments/assets/e801a249-f977-43eb-92c9-b87c9f239102)
 
-![WhatsApp Image 2024-10-03 at 16 26 51_37ebd960](https://github.com/user-attachments/assets/98e57d7f-420b-408d-ae6d-9ffd764b33a1)
+<img width="1174" alt="96" src="https://github.com/user-attachments/assets/ebcdba90-568c-4d31-99f2-a504bdd2a743" />
+
+
+<img width="1163" alt="97" src="https://github.com/user-attachments/assets/6bc8b440-767a-4970-a12d-95204685096b" />
 
 OR gate of drive strength 2 is driving 4 fanouts
 
-![WhatsApp Image 2024-10-03 at 16 26 57_0b002b8b](https://github.com/user-attachments/assets/368f4878-68b0-413f-9da4-565731c117f5)
+<img width="1173" alt="98" src="https://github.com/user-attachments/assets/ce0af848-6b2d-4a58-a928-f280d2620800" />
+
 
 Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
 
@@ -1087,13 +1103,15 @@ report_checks -fields {net cap slew input_pins} -digits 4
 
 Result - slack reduced
 
-![WhatsApp Image 2024-10-03 at 16 26 57_7aae6f8d](https://github.com/user-attachments/assets/106fb7fd-43a1-4eab-b5f2-6a318802ab26)
+<img width="1171" alt="99" src="https://github.com/user-attachments/assets/e657c578-dd0f-4ede-9d89-d469463a7d4f" />
 
-![WhatsApp Image 2024-10-03 at 16 26 57_3a633e21](https://github.com/user-attachments/assets/ad3653a2-4480-4d5a-b31e-938cf37055f4)
+<img width="1171" alt="101" src="https://github.com/user-attachments/assets/ab17caa9-7f6b-444c-b916-50500e714122" />
+
 
 OR gate of drive strength 2 driving OA gate has more delay
 
-![WhatsApp Image 2024-10-03 at 16 26 57_0490a6b8](https://github.com/user-attachments/assets/01033e92-d360-49a5-9527-9296b2aeba0d)
+<img width="1169" alt="102" src="https://github.com/user-attachments/assets/6da25da0-717b-42e8-b13f-0e58558f8eca" />
+
 
 Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
 
@@ -1110,13 +1128,15 @@ report_checks -fields {net cap slew input_pins} -digits 4
 
 Result - slack reduced
 
-![WhatsApp Image 2024-10-03 at 16 26 57_41f29edf](https://github.com/user-attachments/assets/c29a7cc3-9de2-4568-aaeb-ea32877d6169)
+<img width="1172" alt="103" src="https://github.com/user-attachments/assets/dd57b973-5b3e-4b22-bdc9-0bb38c8344dd" />
 
-![WhatsApp Image 2024-10-03 at 16 26 57_16b62538](https://github.com/user-attachments/assets/f13fe561-f4a7-423f-97ac-0e5ed51ad349)
+<img width="1169" alt="104" src="https://github.com/user-attachments/assets/54b3aa70-f1f0-486c-9fd5-6728eaef7282" />
+
 
 OR gate of drive strength 2 driving OA gate has more delay
 
-![WhatsApp Image 2024-10-03 at 16 26 59_32ab2d04](https://github.com/user-attachments/assets/c0d1acbb-5f9e-4ea3-b3d1-3dcbb5bda39a)
+<img width="1167" alt="105" src="https://github.com/user-attachments/assets/b11cd931-91eb-4cdc-ad23-d79b6bdca9a5" />
+
 Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
 
 ```tcl
@@ -1132,9 +1152,10 @@ report_checks -fields {net cap slew input_pins} -digits 4
 
 Result - slack reduced
 
-![WhatsApp Image 2024-10-03 at 16 26 59_34260d01](https://github.com/user-attachments/assets/6171a943-178a-4013-ad0e-295a2363ccaa)
+<img width="1170" alt="106" src="https://github.com/user-attachments/assets/e220bcfb-16a1-43e5-9675-6cbcce755f65" />
 
-![WhatsApp Image 2024-10-03 at 16 26 59_694fecb0](https://github.com/user-attachments/assets/6861b520-c051-4229-aff1-e0a9f154bf48)
+<img width="1169" alt="107" src="https://github.com/user-attachments/assets/32885b66-d372-4af0-95aa-14881f73a421" />
+
 
 Commands to verify instance `_14506_`  is replaced with `sky130_fd_sc_hd__or4_4`
 
@@ -1145,7 +1166,8 @@ report_checks -from _29043_ -to _30440_ -through _14506_
 
 Screenshot of replaced instance
 
-![WhatsApp Image 2024-10-03 at 16 26 59_b253374a](https://github.com/user-attachments/assets/9417e560-e43b-40bd-98be-e528902d786f)
+<img width="1177" alt="108" src="https://github.com/user-attachments/assets/0cfd6866-1fe0-4c14-8f14-b9f84face946" />
+
 
 *We started ECO fixes at wns -23.9000 and now we stand at wns -22.6173 we reduced around 1.2827 ns of violation*
 
@@ -1186,7 +1208,7 @@ exit
 
 Verified that the netlist is overwritten by checking that instance `_14506_`  is replaced with `sky130_fd_sc_hd__or4_4`
 
-![Screenshot from 2024-10-01 19-44-19](https://github.com/user-attachments/assets/c2fba02c-f481-4104-a8fb-f9b766e4e713)
+<img width="957" alt="109" src="https://github.com/user-attachments/assets/43f0fe5d-8332-4c48-ad94-b578a909bffb" />
 
 Since we confirmed that netlist is replaced and will be loaded in PnR but since we want to follow up on the earlier 0 violation design we are continuing with the clean design to further stages
 
@@ -1274,9 +1296,13 @@ exit
 Screenshots of timing report generated
 
 
-![Screenshot from 2024-10-01 19-58-48](https://github.com/user-attachments/assets/605939c4-8cdf-4d75-8cab-61f2c296e245)
+<img width="1172" alt="110" src="https://github.com/user-attachments/assets/ab1426bb-b349-4eeb-825c-b4495e7a7931" />
 
-![Screenshot from 2024-10-01 19-58-59](https://github.com/user-attachments/assets/14a5841a-f37e-4598-b55c-45ddaa72aad6)
+<img width="1172" alt="111" src="https://github.com/user-attachments/assets/7a4482c5-6697-4119-bcc6-53aefed4fd3f" />
+
+<img width="1172" alt="112" src="https://github.com/user-attachments/assets/871eb6b4-71bc-4b8e-b9d0-4e3bd89c8594" />
+
+
 
 #### 13. Explore post-CTS OpenROAD timing analysis by removing 'sky130_fd_sc_hd__clkbuf_1' cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'.
 
@@ -1359,13 +1385,13 @@ echo $::env(CTS_CLK_BUFFER_LIST)
 Screenshots of timing report generated
 
 
-![Screenshot from 2024-10-01 20-10-55](https://github.com/user-attachments/assets/a551d5b0-e3a4-4170-aff3-b77537e49df8)
+<img width="1170" alt="113" src="https://github.com/user-attachments/assets/7a01b833-b2a2-4a9b-8113-20befb2dced4" />
 
-![Screenshot from 2024-10-01 20-10-55](https://github.com/user-attachments/assets/f30df6bc-9313-40cc-9660-694b5073595a)
+<img width="1174" alt="114" src="https://github.com/user-attachments/assets/9eb31e8b-ae6d-4303-a80b-c21a1fb5cd6c" />
 
-![Screenshot from 2024-10-01 20-10-59](https://github.com/user-attachments/assets/7c1442d8-116e-4a4c-adb9-7e6a8a5765ed)
+<img width="1174" alt="115" src="https://github.com/user-attachments/assets/362ff0aa-a267-4b20-ab83-ad0b05810c78" />
 
-## Section 5 - Final steps for RTL2GDS using tritonRoute and openSTA (25/03/2024 - 26/03/2024)
+## Section 5 - Final steps for RTL2GDS using tritonRoute and openSTA
 
 
 
@@ -1446,11 +1472,12 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshots of PDN def
 
-![WhatsApp Image 2024-10-03 at 17 23 14_0562f394](https://github.com/user-attachments/assets/7cee742f-ba32-44fc-8ca5-ee5769f03256)
+<img width="954" alt="116" src="https://github.com/user-attachments/assets/27444661-07bf-4317-9f0a-0b05b2ceb312" />
 
-![WhatsApp Image 2024-10-03 at 17 23 14_d0cd72a0](https://github.com/user-attachments/assets/15a2e506-2780-4c87-bd4b-3fe780a65cda)
+<img width="958" alt="117" src="https://github.com/user-attachments/assets/c2cbee38-09c6-4a0f-aa32-a96f7e95b686" />
 
-![WhatsApp Image 2024-10-03 at 17 23 14_5b7a27f3](https://github.com/user-attachments/assets/7058a16b-3ae5-4c15-9734-906cb7a819da)
+
+<img width="959" alt="118" src="https://github.com/user-attachments/assets/53926d89-eb4c-4624-b2b0-c3dda0261d18" />
 
 #### 2. Perfrom detailed routing using TritonRoute and explore the routed layout.
 
@@ -1481,20 +1508,23 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshots of routed def
 
-![WhatsApp Image 2024-10-03 at 18 06 13_06c24d3e](https://github.com/user-attachments/assets/b5b6423d-750b-49f9-adeb-0a73ddc739e8)
+<img width="952" alt="119" src="https://github.com/user-attachments/assets/44c45b40-b2dd-40e9-855e-7526291e3987" />
 
-![WhatsApp Image 2024-10-03 at 18 06 13_0b0d6888](https://github.com/user-attachments/assets/e0e11a83-bd82-46d9-94da-eda4ed719771)
+<img width="957" alt="120" src="https://github.com/user-attachments/assets/62ee8198-916f-4f51-ab2a-9ed3148096b5" />
 
-![WhatsApp Image 2024-10-03 at 18 06 15_10c78fa7](https://github.com/user-attachments/assets/3cc6d07c-5faa-4730-8b51-8d159f695215)
 
-![WhatsApp Image 2024-10-03 at 18 06 18_fef149c7](https://github.com/user-attachments/assets/a5b6880a-b17f-4105-82e4-488ffcdfb694)
+<img width="958" alt="121" src="https://github.com/user-attachments/assets/5c322f7a-8f33-4281-97a0-969077de74d0" />
 
-![WhatsApp Image 2024-10-03 at 18 06 18_780bcad5](https://github.com/user-attachments/assets/1e2fe344-79e9-4508-bff4-ca064b58a9f5)
+
+<img width="956" alt="122" src="https://github.com/user-attachments/assets/f80b1974-a70b-4069-98d9-7a54903df088" />
+
+<img width="958" alt="123" src="https://github.com/user-attachments/assets/08709e88-a29c-4c24-b8e7-1159ddc79d10" />
 
 
 Screenshot of fast route guide present in `openlane/designs/picorv32a/runs/05-01_18-52/tmp/routing` directory
 
-![WhatsApp Image 2024-10-03 at 18 06 18_48aa995e](https://github.com/user-attachments/assets/67df4402-5a1d-48bf-bccd-876768f3c509)
+<img width="952" alt="124" src="https://github.com/user-attachments/assets/62bb4a8a-5154-4b74-96b1-7ee6f290322d" />
+
 
 #### 3. Post-Route parasitic extraction using SPEF extractor.
 
@@ -1557,6 +1587,11 @@ exit
 ```
 
 Screenshots of commands run and timing report generated
+
+<img width="1168" alt="125" src="https://github.com/user-attachments/assets/d091705a-6317-4d43-af3e-648fb5fb988e" />
+
+<img width="1172" alt="126" src="https://github.com/user-attachments/assets/fcde4785-65f1-491b-af4a-a2271ff3f78f" />
+
 
 
 
