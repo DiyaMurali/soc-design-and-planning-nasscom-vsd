@@ -1592,6 +1592,18 @@ Screenshots of commands run and timing report generated
 
 <img width="1172" alt="126" src="https://github.com/user-attachments/assets/fcde4785-65f1-491b-af4a-a2271ff3f78f" />
 
+# Tools used
+1. Yosys Synthesis Suite
+2. OpenLANE RTL2GDS digital design suite
+3. NGSpice for Characterization
+4. Magic for Layout and Floorplanning
+5. OpenSTA for Static timing analysis
+
+
+
+
+
+
 
 
 
