@@ -1599,6 +1599,22 @@ Screenshots of commands run and timing report generated
 4. Magic for Layout and Floorplanning
 5. OpenSTA for Static timing analysis
 
+# Word of Thanks
+I would like to express my sincere gratitude to **Mr. Kunal Ghosh, Co-Founder of VLSI System Design (VSD)**, for conducting the Physical Design course. His expertise and dedication have been truly inspiring and have greatly enriched my learning experience.
+
+Thank you for your invaluable guidance and support!
+
+# Acknowledgements
+1. [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
+2. [Nickson P Jose](https://github.com/nickson-jose), Physical Design Engineer, Intel Corporation.
+3. [R. Timothy Edwards](https://github.com/RTimothyEdwards), Senior Vice President of Analog and Design, efabless Corporation.
+4. Websearch Engine and many github issues and commits in Openlane community.
+
+# References
+1. https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd
+2. https://github.com/AnupriyaKrishnamoorthy/NASSCOM-PD-ANU
+3. https://github.com/nickson-jose/vsdstdcelldesign
+
 
 
 
